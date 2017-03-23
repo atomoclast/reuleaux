@@ -1,11 +1,13 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(workspace_visualization)
 
+
 find_package(catkin REQUIRED COMPONENTS
     rviz
     map_creator
 )
-catkin_package(INCLUDE_DIRS  )
+
+catkin_package(INCLUDE_DIRS)
 include_directories(include ${catkin_INCLUDE_DIRS})
 link_directories(${catkin_LIBRARY_DIRS})
 
@@ -30,7 +32,7 @@ set(SRC_FILES
   src/reachability_map_display.cpp
   src/capability_map_visual.cpp
   src/capability_map_display.cpp
-  
+
 )
 
 add_library(${PROJECT_NAME} ${SRC_FILES})
@@ -50,5 +52,3 @@ install(FILES
 
 install(DIRECTORY icons/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/icons)
-
-
